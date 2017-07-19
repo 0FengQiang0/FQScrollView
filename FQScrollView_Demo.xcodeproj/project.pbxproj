@@ -15,6 +15,8 @@
 		1FEB6D501F1F3B8900CCB16C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FEB6D4E1F1F3B8900CCB16C /* LaunchScreen.storyboard */; };
 		1FEB6D5B1F1F3B8A00CCB16C /* FQScrollView_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB6D5A1F1F3B8A00CCB16C /* FQScrollView_DemoTests.m */; };
 		1FEB6D661F1F3B8A00CCB16C /* FQScrollView_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB6D651F1F3B8A00CCB16C /* FQScrollView_DemoUITests.m */; };
+		1FEB6D781F1F3BFA00CCB16C /* FQAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB6D751F1F3BFA00CCB16C /* FQAutoScrollView.m */; };
+		1FEB6D791F1F3BFA00CCB16C /* FQImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB6D771F1F3BFA00CCB16C /* FQImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		1FEB6D611F1F3B8A00CCB16C /* FQScrollView_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FQScrollView_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEB6D651F1F3B8A00CCB16C /* FQScrollView_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FQScrollView_DemoUITests.m; sourceTree = "<group>"; };
 		1FEB6D671F1F3B8A00CCB16C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FEB6D741F1F3BFA00CCB16C /* FQAutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQAutoScrollView.h; sourceTree = "<group>"; };
+		1FEB6D751F1F3BFA00CCB16C /* FQAutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQAutoScrollView.m; sourceTree = "<group>"; };
+		1FEB6D761F1F3BFA00CCB16C /* FQImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQImageView.h; sourceTree = "<group>"; };
+		1FEB6D771F1F3BFA00CCB16C /* FQImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 				1FEB6D441F1F3B8900CCB16C /* AppDelegate.m */,
 				1FEB6D461F1F3B8900CCB16C /* ViewController.h */,
 				1FEB6D471F1F3B8900CCB16C /* ViewController.m */,
+				1FEB6D731F1F3BFA00CCB16C /* FQScrollView */,
 				1FEB6D491F1F3B8900CCB16C /* Main.storyboard */,
 				1FEB6D4C1F1F3B8900CCB16C /* Assets.xcassets */,
 				1FEB6D4E1F1F3B8900CCB16C /* LaunchScreen.storyboard */,
@@ -138,6 +145,17 @@
 				1FEB6D671F1F3B8A00CCB16C /* Info.plist */,
 			);
 			path = FQScrollView_DemoUITests;
+			sourceTree = "<group>";
+		};
+		1FEB6D731F1F3BFA00CCB16C /* FQScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				1FEB6D741F1F3BFA00CCB16C /* FQAutoScrollView.h */,
+				1FEB6D751F1F3BFA00CCB16C /* FQAutoScrollView.m */,
+				1FEB6D761F1F3BFA00CCB16C /* FQImageView.h */,
+				1FEB6D771F1F3BFA00CCB16C /* FQImageView.m */,
+			);
+			path = FQScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,8 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FEB6D481F1F3B8900CCB16C /* ViewController.m in Sources */,
+				1FEB6D791F1F3BFA00CCB16C /* FQImageView.m in Sources */,
 				1FEB6D451F1F3B8900CCB16C /* AppDelegate.m in Sources */,
 				1FEB6D421F1F3B8900CCB16C /* main.m in Sources */,
+				1FEB6D781F1F3BFA00CCB16C /* FQAutoScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
