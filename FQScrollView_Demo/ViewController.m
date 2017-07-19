@@ -26,6 +26,7 @@
     
     // 加载图片资源,可以是本地的,也可以是URL ...
     scrollView.dataArray = @[@"01.jpg",@"02.jpg",@"http://avatar.csdn.net/6/3/A/1_qq_32497905.jpg"];
+    
     // 因为数组里有以 http 开头的url，需要去 info.plist文件里做一下配置...否则无法显示网络图片 ...  加上  App Transport Security Settings
 }
 
