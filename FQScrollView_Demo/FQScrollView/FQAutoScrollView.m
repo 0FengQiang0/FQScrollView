@@ -37,6 +37,7 @@
     _FRAME = frame;
     _scrollView.frame = CGRectMake(0, 0, _FRAME.size.width, _FRAME.size.height);
     _pageControl.frame = CGRectMake(0, _FRAME.size.height*3/4.0, _FRAME.size.width, _FRAME.size.height/4.0);
+    [self loadImage];
 }
 
 -(void)prepareUI {
