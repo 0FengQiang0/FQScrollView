@@ -11,6 +11,6 @@
 @interface FQAutoScrollView : UIView
 
 //图片数组,数组的元素可以是 "本地图片名称" 或 "图片URL字符串"
-@property(nonatomic,strong)NSArray *dataArray;
+@property(nonatomic,strong)NSArray *imageArray;
 
 @end

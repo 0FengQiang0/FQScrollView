@@ -31,6 +31,14 @@
     return self;
 }
 
+-(void)setFrame:(CGRect)frame {
+    
+    [super setFrame:frame];
+    _FRAME = frame;
+    _scrollView.frame = CGRectMake(0, 0, _FRAME.size.width, _FRAME.size.height);
+    _pageControl.frame = CGRectMake(0, _FRAME.size.height*3/4.0, _FRAME.size.width, _FRAME.size.height/4.0);
+}
+
 -(void)prepareUI {
     
     [self addSubview:self.scrollView];
@@ -54,7 +62,7 @@
     
     if (!_pageControl) {
         _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _FRAME.size.height*3/4.0, _FRAME.size.width, _FRAME.size.height/4.0)];
-        _pageControl.numberOfPages = _dataArray.count;
+        _pageControl.numberOfPages = _imageArray.count;
         _pageControl.enabled = NO;
     }
     
@@ -72,8 +80,8 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     if (_scrollView.contentOffset.x == 0)
-        _scrollView.contentOffset = CGPointMake(_dataArray.count*_FRAME.size.width, 0);
-    if (_scrollView.contentOffset.x == (_dataArray.count +1)*_FRAME.size.width)
+        _scrollView.contentOffset = CGPointMake(_imageArray.count*_FRAME.size.width, 0);
+    if (_scrollView.contentOffset.x == (_imageArray.count +1)*_FRAME.size.width)
         _scrollView.contentOffset = CGPointMake(_FRAME.size.width, 0);
     
     _pageControl.currentPage = (_scrollView.contentOffset.x +_scrollView.frame.size.width*0.5)/_scrollView.frame.size.width -1;
@@ -86,43 +94,48 @@
     [_scrollView setContentOffset:tmpPoint animated:YES];
 }
 
--(void)setDataArray:(NSArray *)dataArray {
+-(void)setImageArray:(NSArray *)imageArray {
     
-    _dataArray = dataArray;
-    _scrollView.contentSize = CGSizeMake((_dataArray.count +2)*_FRAME.size.width, 0);
-    _pageControl.numberOfPages = _dataArray.count;
+    _imageArray = imageArray;
     
+    if (_FRAME.size.width != 0 || _FRAME.size.height != 0)
+        [self loadImage];
+}
+
+- (void)loadImage {
     
+    _pageControl.numberOfPages = _imageArray.count;
+    _scrollView.contentSize = CGSizeMake((_imageArray.count +2)*_FRAME.size.width, 0);
     [_scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    for (int i=0; i<_dataArray.count +2; i++) {
+    
+    for (int i=0; i<_imageArray.count +2; i++) {
         
         FQImageView *imageView = [[FQImageView alloc] initWithFrame:CGRectMake(i*_FRAME.size.width, 0, _FRAME.size.width, _FRAME.size.height)];
         
-        if (i == 0 && _dataArray.count!=0){
-            if ([_dataArray[_dataArray.count-1] containsString:@"http"]||[_dataArray[_dataArray.count-1] containsString:@"https"])
-                [imageView fq_setImageWithURL:[NSURL URLWithString:_dataArray[_dataArray.count-1]]];
+        if (i == 0 && _imageArray.count!=0){
+            if ([_imageArray[_imageArray.count-1] containsString:@"http"]||[_imageArray[_imageArray.count-1] containsString:@"https"])
+                [imageView fq_setImageWithURL:[NSURL URLWithString:_imageArray[_imageArray.count-1]]];
             else
-                imageView.image = [UIImage imageNamed:_dataArray[_dataArray.count-1]];
+                imageView.image = [UIImage imageNamed:_imageArray[_imageArray.count-1]];
         }
         
-        if (i > 0 && i<_dataArray.count +1){
-            if ([_dataArray[i-1] containsString:@"http"]||[_dataArray[i-1] containsString:@"https"])
-                [imageView fq_setImageWithURL:[NSURL URLWithString:_dataArray[i-1]]];
+        if (i > 0 && i<_imageArray.count +1){
+            if ([_imageArray[i-1] containsString:@"http"]||[_imageArray[i-1] containsString:@"https"])
+                [imageView fq_setImageWithURL:[NSURL URLWithString:_imageArray[i-1]]];
             else
-                imageView.image = [UIImage imageNamed:_dataArray[i-1]];
+                imageView.image = [UIImage imageNamed:_imageArray[i-1]];
         }
         
-        if (i == _dataArray.count +1 && _dataArray.count!=0){
-            if ([_dataArray[0] containsString:@"http"]||[_dataArray[0] containsString:@"https"])
-                [imageView fq_setImageWithURL:[NSURL URLWithString:_dataArray[0]]];
+        if (i == _imageArray.count +1 && _imageArray.count!=0){
+            if ([_imageArray[0] containsString:@"http"]||[_imageArray[0] containsString:@"https"])
+                [imageView fq_setImageWithURL:[NSURL URLWithString:_imageArray[0]]];
             else
-                imageView.image = [UIImage imageNamed:_dataArray[0]];
+                imageView.image = [UIImage imageNamed:_imageArray[0]];
         }
         
         [_scrollView addSubview:imageView];
         
     }
-
 }
 
 @end
