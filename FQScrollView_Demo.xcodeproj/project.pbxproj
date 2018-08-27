@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FCCD02B2134426500651982 /* SpaceImagePageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCD02A2134426500651982 /* SpaceImagePageControl.m */; };
 		1FEB6D421F1F3B8900CCB16C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB6D411F1F3B8900CCB16C /* main.m */; };
 		1FEB6D451F1F3B8900CCB16C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB6D441F1F3B8900CCB16C /* AppDelegate.m */; };
 		1FEB6D481F1F3B8900CCB16C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB6D471F1F3B8900CCB16C /* ViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FCCD0292134426500651982 /* SpaceImagePageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceImagePageControl.h; sourceTree = "<group>"; };
+		1FCCD02A2134426500651982 /* SpaceImagePageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceImagePageControl.m; sourceTree = "<group>"; };
 		1FEB6D3D1F1F3B8900CCB16C /* FQScrollView_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FQScrollView_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEB6D411F1F3B8900CCB16C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FEB6D431F1F3B8900CCB16C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				1FEB6D751F1F3BFA00CCB16C /* FQAutoScrollView.m */,
 				1FEB6D761F1F3BFA00CCB16C /* FQImageView.h */,
 				1FEB6D771F1F3BFA00CCB16C /* FQImageView.m */,
+				1FCCD0292134426500651982 /* SpaceImagePageControl.h */,
+				1FCCD02A2134426500651982 /* SpaceImagePageControl.m */,
 			);
 			path = FQScrollView;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FEB6D481F1F3B8900CCB16C /* ViewController.m in Sources */,
+				1FCCD02B2134426500651982 /* SpaceImagePageControl.m in Sources */,
 				1FEB6D791F1F3BFA00CCB16C /* FQImageView.m in Sources */,
 				1FEB6D451F1F3B8900CCB16C /* AppDelegate.m in Sources */,
 				1FEB6D421F1F3B8900CCB16C /* main.m in Sources */,
@@ -538,6 +544,7 @@
 				1FEB6D6C1F1F3B8A00CCB16C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FEB6D6D1F1F3B8A00CCB16C /* Build configuration list for PBXNativeTarget "FQScrollView_DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +553,7 @@
 				1FEB6D6F1F1F3B8A00CCB16C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FEB6D701F1F3B8A00CCB16C /* Build configuration list for PBXNativeTarget "FQScrollView_DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +562,7 @@
 				1FEB6D721F1F3B8A00CCB16C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

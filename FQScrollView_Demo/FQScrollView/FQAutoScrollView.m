@@ -8,11 +8,12 @@
 
 #import "FQAutoScrollView.h"
 #import "FQImageView.h"
+#import "SpaceImagePageControl.h"
 
 @interface FQAutoScrollView ()<UIScrollViewDelegate>
 
 @property(nonatomic,strong)UIScrollView *scrollView;
-@property(nonatomic,strong)UIPageControl *pageControl;
+@property(nonatomic,strong)SpaceImagePageControl *pageControl;
 @property(nonatomic,strong)NSTimer *timer;
 @property(nonatomic,assign)CGRect FRAME;
 
@@ -62,7 +63,7 @@
 -(UIPageControl*)pageControl {
     
     if (!_pageControl) {
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _FRAME.size.height*3/4.0, _FRAME.size.width, _FRAME.size.height/4.0)];
+        _pageControl = [[SpaceImagePageControl alloc] initWithFrame:CGRectMake(0, _FRAME.size.height*3/4.0, _FRAME.size.width, _FRAME.size.height/4.0)];
         _pageControl.numberOfPages = _imageArray.count;
         _pageControl.enabled = NO;
     }
@@ -101,6 +102,10 @@
     
     if (_FRAME.size.width != 0 || _FRAME.size.height != 0)
         [self loadImage];
+    
+    [_pageControl setDotWidth:6 activeDotWidth:8 dotSpace:5];
+    _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    _pageControl.currentPageIndicatorTintColor = [UIColor redColor];
 }
 
 - (void)loadImage {
